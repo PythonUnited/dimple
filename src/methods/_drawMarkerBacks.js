@@ -61,6 +61,6 @@
             if (series._markerBacks === undefined || series._markerBacks === null) {
                 series._markerBacks = {};
             }
-            series._markerBacks[lineDataRow.keyString] = markerBacks;
+            series._markerBacks[lineDataRow.keyString] = markerBacks.merge(shapes);
         }
     };

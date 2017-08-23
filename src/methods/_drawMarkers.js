@@ -94,7 +94,7 @@
         if (series._markers === undefined || series._markers === null) {
             series._markers = {};
         }
-        series._markers[lineDataRow.keyString] = markers;
+        series._markers[lineDataRow.keyString] = markers.merge(shapes);
 
         // Insert the backings before the markers
         dimple._drawMarkerBacks(lineDataRow, chart, series, duration, className, lineShape);

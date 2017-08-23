@@ -236,7 +236,7 @@
             dimple._postDrawHandling(series, updated, removed, duration);
 
             // Save the shapes to the series array
-            series.shapes = series._group.selectAll("." + className);
+            series.shapes = theseShapes.merge(entered);
 
         }
     };
