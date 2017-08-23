@@ -3499,7 +3499,7 @@
             dimple._postDrawHandling(series, updated, removed, duration);
 
             // Save the shapes to the series array
-            series.shapes = series._group.selectAll("." + className);
+            series.shapes = theseShapes.merge(entered);
 
         }
     };
@@ -3630,7 +3630,7 @@
             dimple._postDrawHandling(series, updated, removed, duration);
 
             // Save the shapes to the series array
-            series.shapes = series._group.selectAll("." + classes.join("."));
+            series.shapes = theseShapes.merge(entered);
         }
     };
 
@@ -3715,7 +3715,7 @@
             dimple._postDrawHandling(series, updated, removed, duration);
 
             // Save the shapes to the series array
-            series.shapes = series._group.selectAll("." + classes.join("."));
+            series.shapes = theseShapes.merge(entered);
 
         }
     };
@@ -3958,7 +3958,7 @@
             dimple._postDrawHandling(series, updated, removed, duration);
 
             // Save the shapes to the series array
-            series.shapes = series._group.selectAll("." + className);
+            series.shapes = theseShapes.merge(entered);
 
         }
     };
@@ -4115,7 +4115,7 @@
             dimple._postDrawHandling(series, updated, removed, duration);
 
             // Save the shapes to the series array
-            series.shapes = series._group.selectAll("." + classes.join("."));
+            series.shapes = theseShapes.merge(entered);
 
         }
     };
@@ -4308,7 +4308,7 @@
             if (series._markerBacks === undefined || series._markerBacks === null) {
                 series._markerBacks = {};
             }
-            series._markerBacks[lineDataRow.keyString] = markerBacks;
+            series._markerBacks[lineDataRow.keyString] = markerBacks.merge(shapes);
         }
     };
 
@@ -4408,7 +4408,7 @@
         if (series._markers === undefined || series._markers === null) {
             series._markers = {};
         }
-        series._markers[lineDataRow.keyString] = markers;
+        series._markers[lineDataRow.keyString] = markers.merge(shapes);
 
         // Insert the backings before the markers
         dimple._drawMarkerBacks(lineDataRow, chart, series, duration, className, lineShape);
